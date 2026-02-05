@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var webViewHandler: WebViewHandler
     private lateinit var fileHelper: FileHelper
     private lateinit var vibratorHelper: VibratorHelper
+    private lateinit var chartToolHelper: ChartToolHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         webViewHandler = WebViewHandler(this)
         fileHelper = FileHelper(this)
         vibratorHelper = VibratorHelper(this)
+        chartToolHelper = ChartToolHelper()
 
         myWebView = findViewById(R.id.webview)
         webViewHandler.setupWebView(myWebView)
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         myWebView.addJavascriptInterface(sensorHandler, "Androidsensor")
         myWebView.addJavascriptInterface(fileHelper, "Androidfile")
         myWebView.addJavascriptInterface(vibratorHelper, "Androidvibrator")
+        myWebView.addJavascriptInterface(chartToolHelper, "Androidcharttool")
     }
 
     override fun onResume() {

@@ -46,4 +46,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.webkit)
+
+    // WebSocket 客户端，用于连接制谱器
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
